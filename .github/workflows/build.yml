@@ -8,16 +8,16 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.1
+      uses: microsoft/setup-msbuild@v2
 
     - name: Build Project
       run: msbuild NpcAttack.csproj /p:Configuration=Release
 
     - name: Upload Compiled DLL
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: NpcAttack-DLL
         path: bin/Release/NpcAttack.dll
